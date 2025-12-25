@@ -74,6 +74,35 @@ Stop the container:
 docker-compose down
 ```
 
+### Deploy to Docker Hub
+
+1. **Login to Docker Hub:**
+```bash
+docker login
+```
+Enter your Docker Hub username and password when prompted.
+
+2. **Tag your image** (replace `moustacheacademy` with your Docker Hub username):
+```bash
+docker build -t moustacheacademy/dekodek:latest .
+```
+
+Or tag an existing image:
+```bash
+docker tag dekodek:latest moustacheacademy/dekodek:latest
+```
+
+3. **Push the image to Docker Hub:**
+```bash
+docker push moustacheacademy/dekodek:latest
+```
+
+4. **Pull and run from Docker Hub:**
+```bash
+docker pull moustacheacademy/dekodek:latest
+docker run -d -p 8080:80 moustacheacademy/dekodek:latest
+```
+
 ## Usage
 
 1. Set your bottom gas oxygen percentage (21-40%)
