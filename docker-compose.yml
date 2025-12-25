@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  dekodek:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    container_name: dekodek-app
+    restart: unless-stopped
+
